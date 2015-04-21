@@ -1,0 +1,12 @@
+<div ng-model="player">
+ 
+  <button class="stopButton" ng-click="stop();">Stop</button>
+
+  <div class="player">
+    <div>{{ title }}</div>
+      <div class="">
+        <input type="range" id="seek" value="{{ secondsProgress }}" max="{{ duration }}" ng-model="secondsProgress" ng-init="secondsProgress=0" />
+      </div><!-- / player -->
+  </div>
+   
+</div>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Music Browsing App</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body ng-controller="FrameController">
+
+    <div>
+      <h1> NPR Player </h1>
+    </div>
+
+
+    <h2> Player </h2>
+    <div ng-controller="PlayerController">
+      <div player-view ng-model="player"></div>
+      <ul>
+        <li ng-repeat="program in programs">
+          <span npr-link player="player" ng-model="program"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div ng-controller="RelatedController">
+      <h2> Related Content </h2>
+      <ul id="related">
+        <li ng-repeat="s in related"><a href="{{ s.link }}">{{ s.caption }}</a></li>
+      </ul>
+    </div>
+  
+    <!-- Vendor Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
+
+
+    <!-- Application Libraries -->
+    <script src="js/main.js"></script>
+    <!--script src="js/controllers/inbox.js"></script>
+    <script src="js/factories/InboxFactory.js"></script -->
+  </body>
+</html>
